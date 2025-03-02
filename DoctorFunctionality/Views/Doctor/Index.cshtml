@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Doctor Management";
+}
+
+<h2 class="display-1">Doctor Management</h2>
+
+<!-- Edit Doctor Modal -->
+<div id="editDoctorModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Edit Doctor</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="editDoctorId" />
+                <div class="form-group">
+                    <label>Name:</label>
+                    <input class="form-control-plaintext" type="text" id="editName" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Contact:</label>
+                    <input class="form-control-plaintext" type="text" id="editContact" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Specialization:</label>
+                    <input class="form-control-plaintext" type="text" id="editSpecialization" class="form-control" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="btnUpdate" class="btn btn-success">Update</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Doctor Form -->
+<form id="doctorForm">
+    <input type="hidden" id="doctorId" />
+    <input class="form-control-plaintext border" type="text" id="name" placeholder="Doctor Name" required />
+    <input class="form-control-plaintext border" type="text" id="contact" placeholder="Contact" required />
+    <input class="form-control-plaintext border" type="text" id="specialization" placeholder="Specialization" required />
+    <button class="btn btn-primary border" type="button" id="btnSave">Save</button>
+</form>
+
+<!-- Doctor List -->
+<table class="table" >
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Specialization</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody id="doctorTable"></tbody>
+</table>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/js/doctor.js"></script>
